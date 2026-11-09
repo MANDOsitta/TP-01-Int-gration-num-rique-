@@ -40,8 +40,8 @@ for i = 1:length(tmin)
     th(i) = tmin(i) / 60;
 end
 // TODO 5 : energie par les deux quadratures (en kWh).
-Etrap = %nan;
-Esimp = %nan;
+Etrap = trapezes(th, Pkw);
+Esimp = simpson(th, Pkw);
 mprintf("Pompe : trapezes=%.6f kWh ; Simpson=%.6f kWh\n", ..
         Etrap, Esimp);
 mprintf("Ecart=%.6f kWh ; borne des lectures=%.6f kWh\n", ..
